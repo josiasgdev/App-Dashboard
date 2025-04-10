@@ -23,7 +23,10 @@ $(document).ready(() => {
             type: 'GET',
             url: 'app.php',
             data: `competencia=${competencia}`, //x-www-form-urlencoded
-            success: dados => {console.log(dados)},
+            dataType: 'json',
+            success: dados => {
+                $('#numeroVendas').html(dados.numeroVendas)
+                $('#totalVendas').html(dados.totalVendas)},
             error: erro => {console.log(erro)}
 
         })
