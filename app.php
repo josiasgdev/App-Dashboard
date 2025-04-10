@@ -99,14 +99,18 @@ $dashboard = new Dashboard();
 
 $conexao = new Conexao();
 
+//$competencia
+
 $dashboard->__set('data_inicio','2018-10-01');
 $dashboard->__set('data_fim', '2018-10-31');
 
 $bd = new Bd($conexao, $dashboard);
 
 $dashboard->__set('numeroVendas', $bd->getNumeroVendas());
-print_r($dashboard);
+$dashboard->__set('totalVendas', $bd->getTotalVendas());
 
-print_r($bd->getTotalVendas());
+print_r($_GET);
+
+
 
 ?>
